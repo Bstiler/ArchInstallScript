@@ -1,4 +1,4 @@
-source ./.env;
+source ./env-setup.sh;
 
 if [ ! $ROOTFS ]
 then
