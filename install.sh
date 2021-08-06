@@ -28,6 +28,7 @@ source $SCRIPT_DIR/base.sh;
 
 # Generate FSTAB
 source $SCRIPT_DIR/fstab.sh;
+generate_fstab;
 
 # Create Sub-script
 
