@@ -9,11 +9,9 @@ mount_stuff() {
 
     mkdir -p /mnt/media/$USERNAME/home
     mkdir -p /mnt/boot/efi
-    mkdir -p /mnt/opt/swap_partition
 
     stop_if_fail mount $HOMEFS /mnt/media/$USERNAME/home
     stop_if_fail mount $EFIFS /mnt/boot/efi
-    stop_if_fail mount -o subvol=swap $ROOTFS /mnt/opt/swap_partition
 }
 
 umount_stuff() {

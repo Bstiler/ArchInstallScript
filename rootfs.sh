@@ -15,7 +15,6 @@ set_root_as_btrfs() {
     stop_if_fail mount $1 /mnt
     cd /mnt
     stop_if_fail btrfs subvolume create @
-    stop_if_fail btrfs subvolume create swap
     cd ~
     stop_if_fail umount /mnt
 }

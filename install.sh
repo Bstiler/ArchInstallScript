@@ -15,10 +15,6 @@ set_root_as_btrfs $ROOTFS;
 source $SCRIPT_DIR/mount.sh;
 mount_stuff;
 
-# BTRFS swapfile setup
-source $SCRIPT_DIR/swapfile.sh;
-set_up_swapfile 1024;
-
 # Set up home folder
 source $SCRIPT_DIR/home.sh;
 create_home;
