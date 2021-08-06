@@ -13,8 +13,6 @@ set_root_as_btrfs() {
     STEP="Set Up Root Filesystem"
     stop_if_fail mkfs.btrfs -f $1
     stop_if_fail mount $1 /mnt
-    cd /mnt
-    stop_if_fail btrfs subvolume create @
-    cd ~
+    stop_if_fail btrfs subvolume create /mnt/@
     stop_if_fail umount /mnt
 }
