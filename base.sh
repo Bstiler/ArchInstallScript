@@ -1,4 +1,5 @@
-source ./functions.sh;
+SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
+source $SCRIPT_DIR/functions.sh;
 
 # Install Base System
 STEP="Install Packades Step";

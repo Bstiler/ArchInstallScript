@@ -1,4 +1,5 @@
-source ./env-setup.sh;
+SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
+source $SCRIPT_DIR/env-setup.sh;
 
 if [ ! $ROOTFS ]
 then

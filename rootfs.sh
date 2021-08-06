@@ -1,4 +1,5 @@
-source ./functions.sh;
+SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
+source $SCRIPT_DIR/functions.sh;
 # Set up Root filesystem
 
 # Receives the device to be used as root file system
