@@ -143,7 +143,7 @@ echo "Time to see the fstab";
 
 touch /tmp/chroot-script.sh
 
-echo "#!/bin/sh" >> /tmp/chroot-script.sh;
+echo "#\!/bin/sh" >> /tmp/chroot-script.sh;
 echo "" >> /tmp/chroot-script.sh;
 echo "sed -i '#/en_US.UTF-8 UTF-8/c\en_US.UTF-8 UTF-8' /etc/locale.gen;" >> /tmp/chroot-script.sh;
 echo "sed -i '#/pt_BR.UTF-8 UTF-8/c\pt_BR.UTF-8 UTF-8' /etc/locale.gen;" >> /tmp/chroot-script.sh;
