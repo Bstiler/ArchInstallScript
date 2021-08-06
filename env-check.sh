@@ -24,8 +24,8 @@ echo "Username variable not found. Please define one at the \$USERNAME variable.
 exit;
 fi
 
-# if [ ! $MAIN_PASSWORD ]
-# then
-# echo "Password variable not found. Please define one at the \$MAIN_PASSWORD variable.";
-# exit;
-# fi
+if [ ! $MAIN_PASSWORD ]
+then
+echo "Password variable not found. Please define one at the \$MAIN_PASSWORD variable.";
+exit;
+fi
