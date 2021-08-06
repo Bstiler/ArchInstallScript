@@ -15,5 +15,6 @@ create_home() {
     fi
 
     STEP="Set Up Home Folder Step";
+    export FINAL_HOME=/mnt/media/$USERNAME/home/$INSTALATION_NAME;
     mkdir /mnt/media/$USERNAME/home/$INSTALATION_NAME;
 }
