@@ -15,8 +15,6 @@ mount_stuff() {
 }
 
 umount_stuff() {
-    swapoff /mnt/opt/swap_partition/swapfile
-    umount /mnt/opt/swap_partition
     umount /mnt/media/$USERNAME/home
     umount /mnt/boot/efi
     umount /mnt
