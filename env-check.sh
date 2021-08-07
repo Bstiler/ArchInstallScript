@@ -24,3 +24,9 @@ then
 echo "Username variable not found. Please define one at the \$USERNAME variable.";
 exit;
 fi
+
+if [ ! $HOSTNAME ]
+then
+echo "Host name variable not found. Please define one at the \$HOSTNAME variable.";
+exit;
+fi

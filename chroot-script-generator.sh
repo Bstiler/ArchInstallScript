@@ -26,6 +26,7 @@ generate_chroot_script() {
     echo "echo 'KEYMAP=br-abnt2' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'FONT=Lat2-Terminus16' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'FONT_MAP=' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
+    echo "hostnamectl set-hostname $HOSTNAME" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'Please define a password for the root user:';" >> $CHROOT_SCRIPT_PATH;
     echo "passwd;" >> $CHROOT_SCRIPT_PATH;
     echo "useradd -m -g users -G wheel,storage,power -s /usr/bin/zsh -d $FINAL_HOME $USERNAME;" >> $CHROOT_SCRIPT_PATH;
