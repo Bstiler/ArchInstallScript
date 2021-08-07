@@ -21,8 +21,8 @@ generate_chroot_script() {
     echo "hwclock --systohc --utc;" >> $CHROOT_SCRIPT_PATH;
     echo "systemctl enable dhcpcd@eth0.service;" >> $CHROOT_SCRIPT_PATH;
     echo "systemctl enable net-auto-wireless.service;" >> $CHROOT_SCRIPT_PATH;
-    echo "pacman -Syu;" >> $CHROOT_SCRIPT_PATH;
-    echo "pacman -S wireless_tools wpa_supplicant wpa_actiond netcf dialog sudo zsh grub efibootmgr;" >> $CHROOT_SCRIPT_PATH;
+    echo "dhcpcd;" >> $CHROOT_SCRIPT_PATH;
+    echo "pacman -Syyu wireless_tools wpa_supplicant wpa_actiond netcf dialog;" >> $CHROOT_SCRIPT_PATH;
     echo "touch /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'KEYMAP=br-abnt2' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'FONT=Lat2-Terminus16' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
@@ -41,4 +41,3 @@ generate_chroot_script() {
 
     chmod +x $CHROOT_SCRIPT_PATH;
 }
-
