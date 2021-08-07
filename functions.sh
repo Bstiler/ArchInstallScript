@@ -18,15 +18,3 @@ stop_if_previous_failed() {
 		exit;
 	fi
 }
-
-# USAGE: array_join ${ARRAY_NAME[@]}
-array_join() {
-    local TO_RETURN="";
-
-    for ITEM in $@
-    do
-        TO_RETURN="$TO_RETURN $ITEM";
-    done
-
-    echo $TO_RETURN;
-}
