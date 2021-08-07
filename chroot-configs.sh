@@ -31,7 +31,7 @@ vconsole_config() {
 user_config() {
     echo "echo 'Please define a password for the root user:';" >> $1;
     echo "passwd;" >> $1;
-    echo "useradd -m -g users -G wheel,storage,power,sudo -s /usr/bin/zsh -d $FINAL_HOME $USERNAME;" >> $1;
+    echo "useradd -m -g users -G wheel,storage,power -s /usr/bin/zsh -d $FINAL_HOME $USERNAME;" >> $1;
     echo "echo 'Please define a password for your user:';" >> $1;
     echo "passwd $USERNAME;" >> $1;
 }
@@ -39,7 +39,7 @@ user_config() {
 # Configures sudo
 sudo_config() {
     echo "touch /etc/sudoers.d/custom" >> $1;
-    echo "echo '%sudo ALL=(ALL) ALL' >> /etc/sudoers.d/wheel" >> $1;
+    echo "echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers.d/wheel" >> $1;
 }
 
 # Configures grub
