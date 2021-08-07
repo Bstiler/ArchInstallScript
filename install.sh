@@ -28,4 +28,11 @@ generate_fstab;
 
 # Create Sub-script
 
-source $SCRIPT_DIR/chroot-script-generator.sh
+source $SCRIPT_DIR/chroot-script-generator.sh;
+export CHROOT_INTERNAL_PATH=/root/install.sh;
+
+generate_chroot_script;
+
+cp $CHROOT_SCRIPT_PATH "/mnt$CHROOT_INTERNAL_PATH";
+
+arch-chroot /mnt $CHROOT_INTERNAL_PATH;
