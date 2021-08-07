@@ -35,5 +35,5 @@ PACKAGES=(
 );
 
 # Install Base System
-STEP="Install Packades Step";
+STEP="Install Packages Step";
 stop_if_fail pacstrap /mnt ${PACKAGES[@]};
