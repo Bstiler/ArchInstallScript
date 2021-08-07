@@ -16,4 +16,4 @@ PACKAGES=(
 
 # Install Base System
 STEP="Install Packades Step";
-stop_if_fail pacstrap /mnt $PACKAGES[*];
+stop_if_fail pacstrap /mnt `array_join ${PACKAGES[@]}`;

@@ -19,22 +19,14 @@ stop_if_previous_failed() {
 	fi
 }
 
-error_tolerant_pacman() {
-	eval $*;
-	if [ ! $? -eq 0 ]
-	then
-		rm -rf /var/lib/pacman/sync;
-		pacman -Syy;
-		eval $*;
-	fi
-}
+# USAGE: array_join ${ARRAY_NAME[@]}
+array_join() {
+    local TO_RETURN="";
 
-error_tolerant_pacstrap() {
-	eval $*;
-	if [ ! $? -eq 0 ]
-	then
-		rm -rf /mnt/var/lib/pacman/sync;
-		pacman -Syy;
-		eval $*;
-	fi
+    for ITEM in $@
+    do
+        TO_RETURN="$TO_RETURN $ITEM";
+    done
+
+    echo $TO_RETURN;
 }
