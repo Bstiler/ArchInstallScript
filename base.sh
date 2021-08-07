@@ -3,4 +3,4 @@ source $SCRIPT_DIR/functions.sh;
 
 # Install Base System
 STEP="Install Packades Step";
-stop_if_fail pacstrap /mnt;
+stop_if_fail pacstrap /mnt base sudo zsh grub efibootmgr dhcpcd;
