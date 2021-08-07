@@ -24,7 +24,7 @@ error_tolerant_pacman() {
 	if [ ! $? -eq 0 ]
 	then
 		rm -rf /var/lib/pacman/sync;
-		pacman -Syyu;
+		pacman -Syy;
 		eval $*;
 	fi
 }
@@ -34,7 +34,7 @@ error_tolerant_pacstrap() {
 	if [ ! $? -eq 0 ]
 	then
 		rm -rf /mnt/var/lib/pacman/sync;
-		pacman -Syyu;
+		pacman -Syy;
 		eval $*;
 	fi
 }
