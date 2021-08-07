@@ -3,10 +3,12 @@ source $SCRIPT_DIR/functions.sh;
 
 PACKAGES=(
     base
+    linux-lts
     sudo
     zsh
     grub
     efibootmgr
+    os-prober
     dhcpcd
     wireless_tools
     wpa_supplicant
