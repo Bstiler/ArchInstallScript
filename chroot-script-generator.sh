@@ -1,7 +1,7 @@
 # Create Sub-script
 
-SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
-source $SCRIPT_DIR/chroot-configs.sh;
+
+source ./chroot-configs.sh;
 
 generate_chroot_script() {
     if [ ! $1 ]

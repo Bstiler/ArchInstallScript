@@ -1,5 +1,5 @@
-SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
-source $SCRIPT_DIR/functions.sh;
+
+source ./functions.sh;
 
 # Check Netowrk
 stop_if_fail ping -c 3 1.1.1.1;

@@ -1,34 +1,34 @@
 #!/bin/sh
 
-SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
+
 
 # Step 1: Config some misc stuff
 echo "Initial Setup Started";
-source $SCRIPT_DIR/modules/modules/env-check.sh;
-source $SCRIPT_DIR/modules/initial-setup.sh;
+source ./env-check.sh;
+source ./initial-setup.sh;
 
 # Step 2: Setup Root filesystem
-source $SCRIPT_DIR/modules/rootfs.sh;
+source ./rootfs.sh;
 set_root_as_btrfs $ROOTFS;
 
 # Step 3: Mount partitions
-source $SCRIPT_DIR/modules/mount.sh;
+source ./mount.sh;
 mount_stuff;
 
 # Set up home folder
-source $SCRIPT_DIR/modules/home.sh;
+source ./home.sh;
 create_home;
 
 # Install Base System
-source $SCRIPT_DIR/modules/base.sh;
+source ./base.sh;
 
 # Generate FSTAB
-source $SCRIPT_DIR/modules/fstab.sh;
+source ./fstab.sh;
 generate_fstab;
 
 # Create Sub-script
 
-source $SCRIPT_DIR/modules/chroot-script-generator.sh;
+source ./chroot-script-generator.sh;
 export CHROOT_INTERNAL_PATH=/root/install.sh;
 
 generate_chroot_script;

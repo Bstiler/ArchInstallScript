@@ -1,5 +1,5 @@
-SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
-source $SCRIPT_DIR/env-check.sh;
+
+source ./env-check.sh;
 
 # Set up home folder
 

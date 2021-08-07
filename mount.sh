@@ -1,6 +1,6 @@
-SCRIPT_DIR=`cd \`dirname $0\` && pwd`;
-source $SCRIPT_DIR/env-check.sh
-source $SCRIPT_DIR/functions.sh
+
+source ./env-check.sh
+source ./functions.sh
 
 # Mount partitions
 mount_stuff() {
