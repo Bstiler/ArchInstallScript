@@ -19,9 +19,9 @@ generate_chroot_script() {
     echo "export LANG=pt_BR.UTF-8;" >> $CHROOT_SCRIPT_PATH;
     echo "ln -s /usr/share/zoneinfo/America/Recife /etc/localtime;" >> $CHROOT_SCRIPT_PATH;
     echo "hwclock --systohc --utc;" >> $CHROOT_SCRIPT_PATH;
-    echo "systemctl enable dhcpcd@eth0.service;" >> $CHROOT_SCRIPT_PATH;
-    echo "systemctl enable net-auto-wireless.service;" >> $CHROOT_SCRIPT_PATH;
+    echo "systemctl enable NetworkManager;" >> $CHROOT_SCRIPT_PATH;
     echo "dhcpcd;" >> $CHROOT_SCRIPT_PATH;
+    echo "pacman -Syyu;" >> $CHROOT_SCRIPT_PATH;
     echo "touch /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'KEYMAP=br-abnt2' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
     echo "echo 'FONT=Lat2-Terminus16' >> /etc/vconsole.conf;" >> $CHROOT_SCRIPT_PATH;
