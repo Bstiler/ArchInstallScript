@@ -9,6 +9,7 @@ update_repos;
 vconsole_config;
 user_config;
 sudo_config;
+enable_bluetooth;
 grub_config;
 
 if [ $ENABLE_OPENBOX -eq 1 ]

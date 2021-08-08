@@ -57,3 +57,9 @@ enable_openbox() {
     systemctl enable lightdm;
     sudo -u $USERNAME mmaker -vf OpenBox3;
 }
+
+# Enable Bluetooth
+
+enable_bluetooth() {
+    systemctl enable bluetooth;
+}

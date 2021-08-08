@@ -4,6 +4,7 @@ source ./functions.sh;
 BASE_PACKAGES=(
     base
     linux-lts
+    linux-firmware
     sudo
     zsh
     grub
@@ -31,6 +32,10 @@ SYSTEM_UTILS=(
     xorg-xinit
     ttf-dejavu
     xorg-xwayland
+    pipewire
+    pipewire-pulse
+    bluez
+    bluez-utils
 );
 
 OPENBOX_DEV_ENVIRONMENT=(
@@ -41,6 +46,16 @@ OPENBOX_DEV_ENVIRONMENT=(
     menumaker
     xterm
 );
+
+KDE_PACKAGES=(
+    plasma-destop
+    phonon-qt5-vlc
+    sddm
+    plasma-nm
+    plasma-pa
+    konsole
+    plasma-wayland-session
+)
 
 PACKAGES=(
     ${BASE_PACKAGES[@]}
