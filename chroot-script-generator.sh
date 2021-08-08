@@ -20,5 +20,10 @@ generate_chroot_script() {
     sudo_config $CHROOT_SCRIPT_PATH;
     grub_config $CHROOT_SCRIPT_PATH;
 
+    if [ $ENABLE_OPENBOX ]
+    then
+        enable_lightdm $CHROOT_SCRIPT_PATH;
+    fi
+
     chmod +x $CHROOT_SCRIPT_PATH;
 }

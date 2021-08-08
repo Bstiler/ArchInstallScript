@@ -9,6 +9,7 @@ BASE_PACKAGES=(
     grub
     efibootmgr
     os-prober
+    nano
 );
 
 NETWORK_PACKAGES=(
@@ -26,6 +27,17 @@ NETWORK_PACKAGES=(
 
 SYSTEM_UTILS=(
     xdg-utils
+    xorg-server
+    xorg-xinit
+    ttf-dejavu
+    xorg-xwayland
+);
+
+OPENBOX_DEV_ENVIRONMENT=(
+    lightdm
+    lightdm-gtk-greeter
+    openbox
+    alacritty
 );
 
 PACKAGES=(
@@ -33,6 +45,13 @@ PACKAGES=(
     ${NETWORK_PACKAGES[@]}
     ${SYSTEM_UTILS[@]}
 );
+
+if [ $ENABLE_OPENBOX ]
+then
+    PACKAGES+=(
+        ${OPENBOX_DEV_ENVIRONMENT[@]}
+    );
+fi
 
 # Install Base System
 STEP="Install Packages Step";

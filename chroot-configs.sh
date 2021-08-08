@@ -47,3 +47,9 @@ grub_config() {
     echo "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch" >> $1;
     echo "grub-mkconfig -o /boot/grub/grub.cfg" >> $1;
 }
+
+# Enables openbox
+
+enable_lightdm() {
+    echo "systemctl enable lightdm" >> $1;
+}
