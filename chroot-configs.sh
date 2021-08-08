@@ -50,6 +50,7 @@ grub_config() {
 
 # Enables openbox
 
-enable_lightdm() {
+enable_openbox() {
     echo "systemctl enable lightdm" >> $1;
+    echo "mmaker -vf OpenBox3" >> $1;
 }

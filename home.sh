@@ -1,5 +1,6 @@
 
 source ./env-check.sh;
+source ./functions.sh;
 
 # Set up home folder
 
@@ -16,5 +17,6 @@ create_home() {
 
     STEP="Set Up Home Folder Step";
     export FINAL_HOME=/mnt/media/$USERNAME/home/$INSTALATION_NAME;
+    add_post_install_var FINAL_HOME $FINAL_HOME;
     mkdir /mnt/media/$USERNAME/home/$INSTALATION_NAME;
 }

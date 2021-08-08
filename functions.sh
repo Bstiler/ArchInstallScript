@@ -18,3 +18,10 @@ stop_if_previous_failed() {
 		exit;
 	fi
 }
+
+#First parameter is the variable name and ethe second is its value
+add_post_install_var() {
+	local POST_INSTALL_VARS_TMP_FILE=/tmp/postinstall-vars.sh;
+	touch $POST_INSTALL_VARS_TMP_FILE;
+	echo "export $1=$2;" >> $POST_INSTALL_VARS_TMP_FILE;
+}

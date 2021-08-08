@@ -35,9 +35,11 @@ SYSTEM_UTILS=(
 
 OPENBOX_DEV_ENVIRONMENT=(
     lightdm
+    accountsservice
     lightdm-gtk-greeter
     openbox
-    alacritty
+    menumaker
+    xterm
 );
 
 PACKAGES=(
@@ -50,6 +52,13 @@ if [ $ENABLE_OPENBOX ]
 then
     PACKAGES+=(
         ${OPENBOX_DEV_ENVIRONMENT[@]}
+    );
+fi
+
+if [ $VBOX ]
+then
+    PACKAGES+=(
+        virtualbox-guest-utils
     );
 fi
 

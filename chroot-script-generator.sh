@@ -22,7 +22,7 @@ generate_chroot_script() {
 
     if [ $ENABLE_OPENBOX ]
     then
-        enable_lightdm $CHROOT_SCRIPT_PATH;
+        enable_openbox $CHROOT_SCRIPT_PATH;
     fi
 
     chmod +x $CHROOT_SCRIPT_PATH;
