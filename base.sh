@@ -55,6 +55,7 @@ KDE_PACKAGES=(
     plasma-pa
     konsole
     plasma-wayland-session
+    bluedevil
 )
 
 PACKAGES=(
