@@ -10,7 +10,7 @@ source ./functions.sh;
 create_home() {
     if [ ! $1 ]
     then
-        INSTALATION_NAME=arch
+        INSTALATION_NAME=manjaro
     else
         INSTALATION_NAME=$1
     fi

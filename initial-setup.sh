@@ -17,7 +17,7 @@ export LANG=pt_BR.UTF-8;
 
 # Fix mirrors and repos
 STEP="Syncing Mirrors";
-stop_if_fail reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist;
+stop_if_fail pacman-mirrors -g;
 
 STEP="Updating Repos";
 stop_if_fail pacman -Syy;

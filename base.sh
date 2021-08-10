@@ -3,8 +3,9 @@ source ./functions.sh;
 
 BASE_PACKAGES=(
     base
-    linux-lts
+    linux510
     linux-firmware
+    manjaro-firmware
     sudo
     zsh
     grub
@@ -80,4 +81,4 @@ fi
 
 # Install Base System
 STEP="Install Packages Step";
-stop_if_fail pacstrap /mnt ${PACKAGES[@]};
+stop_if_fail pacstrap -c /mnt ${PACKAGES[@]};
