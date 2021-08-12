@@ -15,6 +15,7 @@ mount_stuff() {
 }
 
 umount_stuff() {
+    umount /var/cache/pacman/pkg
     umount /mnt/media/$USERNAME/home
     umount /mnt/boot/efi
     umount /mnt
