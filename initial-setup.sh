@@ -20,4 +20,10 @@ STEP="Syncing Mirrors";
 stop_if_fail reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist;
 
 STEP="Updating Repos";
-stop_if_fail pacman -Syy;
+stop_if_fail pacman -Sy;
+
+# Mount cache
+if [ $VBOX ]
+then
+stop_if_fail mount /dev/sda4 /var/cache/pacman/pkg;
+fi

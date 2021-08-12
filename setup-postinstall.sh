@@ -8,7 +8,7 @@ setup_global_vars() {
 }
 
 copy_vars_file() {
-    cp /tmp/postinstall_vars.sh $1;
+    cp /tmp/postinstall-vars.sh $1;
 }
 
 ignite_postinstall() {

@@ -17,8 +17,6 @@ NETWORK_PACKAGES=(
     dhcpcd
     wireless_tools
     wpa_supplicant
-    netcf
-    dialog
     networkmanager
     networkmanager-vpnc
     networkmanager-pptp
@@ -32,8 +30,8 @@ SYSTEM_UTILS=(
     xorg-xinit
     ttf-dejavu
     xorg-xwayland
-    pipewire
-    pipewire-pulse
+    pulseaudio
+    pulseaudio-bluetooth
     bluez
     bluez-utils
 );
@@ -48,8 +46,8 @@ OPENBOX_DEV_ENVIRONMENT=(
 );
 
 KDE_PACKAGES=(
-    plasma-destop
-    phonon-qt5-vlc
+    plasma-desktop
+    phonon-qt5-gstreamer
     sddm
     plasma-nm
     plasma-pa
@@ -71,6 +69,13 @@ then
     );
 fi
 
+if [ $KDE ]
+then
+    PACKAGES+=(
+        ${KDE_PACKAGES[@]}
+    );
+fi
+
 if [ $VBOX ]
 then
     PACKAGES+=(
@@ -80,4 +85,4 @@ fi
 
 # Install Base System
 STEP="Install Packages Step";
-stop_if_fail pacstrap /mnt ${PACKAGES[@]};
+stop_if_fail pacstrap -c /mnt ${PACKAGES[@]};

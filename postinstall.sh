@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd `diname $0`;
+cd `dirname $0`;
 
 source ./postinstall-scripts.sh;
 
