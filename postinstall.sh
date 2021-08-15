@@ -12,7 +12,17 @@ sudo_config;
 enable_bluetooth;
 grub_config;
 
-if [ $ENABLE_OPENBOX -eq 1 ]
+if [ $ENABLE_OPENBOX ]
 then
     enable_openbox;
+fi
+
+if [ $VBOX ]
+then
+    enable_virtualbox;
+fi
+
+if [ $KDE ]
+then
+    enable_kde;
 fi

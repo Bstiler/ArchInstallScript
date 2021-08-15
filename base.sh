@@ -3,6 +3,7 @@ source ./functions.sh;
 
 BASE_PACKAGES=(
     base
+    base-devel
     linux-lts
     linux-firmware
     sudo
@@ -11,6 +12,7 @@ BASE_PACKAGES=(
     efibootmgr
     os-prober
     nano
+    btrfs-progs
 );
 
 NETWORK_PACKAGES=(
@@ -30,10 +32,13 @@ SYSTEM_UTILS=(
     xorg-xinit
     ttf-dejavu
     xorg-xwayland
-    pulseaudio
-    pulseaudio-bluetooth
+    pipewire
+    pipewire-pulse
     bluez
     bluez-utils
+    git
+    p7zip
+    unrar
 );
 
 OPENBOX_DEV_ENVIRONMENT=(
@@ -48,7 +53,15 @@ OPENBOX_DEV_ENVIRONMENT=(
 KDE_PACKAGES=(
     plasma-desktop
     phonon-qt5-gstreamer
+    discover
+    packagekit-qt5
+    ark
     sddm
+    sddm-kcm
+    qt5-translations
+    aspell
+    aspell-pt
+    aspell-en
     plasma-nm
     plasma-pa
     konsole

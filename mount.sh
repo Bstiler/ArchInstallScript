@@ -12,10 +12,16 @@ mount_stuff() {
 
     stop_if_fail mount $HOMEFS /mnt/media/$USERNAME/home
     stop_if_fail mount $EFIFS /mnt/boot/efi
+
+    if [ $INSTALL_MEDIA ]
+    then
+        mkdir -p /mnt/var/cache/pacman/pkg
+        mount $PACMAN_CACHE /mnt/var/cache/pacman/pkg
+    fi
 }
 
 umount_stuff() {
-    umount /var/cache/pacman/pkg
+    umount /mnt/var/cache/pacman/pkg
     umount /mnt/media/$USERNAME/home
     umount /mnt/boot/efi
     umount /mnt

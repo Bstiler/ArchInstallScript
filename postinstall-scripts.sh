@@ -58,8 +58,20 @@ enable_openbox() {
     sudo -u $USERNAME mmaker -vf OpenBox3;
 }
 
+# Enable KDE
+
+enable_kde() {
+    systemctl enable sddm;
+}
+
 # Enable Bluetooth
 
 enable_bluetooth() {
     systemctl enable bluetooth;
+}
+
+# Enable VirtualBox guest utils
+
+enable_virtualbox() {
+    systemctl enable vboxservice;
 }
