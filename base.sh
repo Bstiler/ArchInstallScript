@@ -13,6 +13,7 @@ BASE_PACKAGES=(
     os-prober
     nano
     btrfs-progs
+    dosfstools
 );
 
 NETWORK_PACKAGES=(
