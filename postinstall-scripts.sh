@@ -79,6 +79,7 @@ enable_virtualbox() {
 # Enable Root Auto-login
 enable_auto_login() {
     AUTO_LOGIN_FILE=/etc/systemd/system/getty@tty1.service.d/autologin.conf;
+    mkdir -p /etc/systemd/system/getty@tty1.service.d;
     touch $AUTO_LOGIN_FILE;
     echo "[Service]" >> $AUTO_LOGIN_FILE;
     echo "ExecStart=" >> $AUTO_LOGIN_FILE;
