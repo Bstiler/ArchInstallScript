@@ -47,7 +47,7 @@ sudo_config() {
 
 # Configures grub
 grub_config() {
-    grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch;
+    grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=$INSTALL_NAME;
     grub-mkconfig -o /boot/grub/grub.cfg;
 }
 
@@ -74,4 +74,13 @@ enable_bluetooth() {
 
 enable_virtualbox() {
     systemctl enable vboxservice;
+}
+
+# Enable Root Auto-login
+enable_auto_login() {
+    AUTO_LOGIN_FILE=/etc/systemd/system/getty@tty1.service.d/autologin.conf;
+    touch $AUTO_LOGIN_FILE;
+    echo "[Service]" >> $AUTO_LOGIN_FILE;
+    echo "ExecStart=" >> $AUTO_LOGIN_FILE;
+    echo "ExecStart=-/usr/bin/agetty --autologin username --noclear %I \$TERM" >> $AUTO_LOGIN_FILE;
 }

@@ -69,6 +69,11 @@ KDE_PACKAGES=(
     bluedevil
 )
 
+INSTALL_MEDIA_PACKAGES=(
+    arch-install-scripts
+    reflector
+)
+
 PACKAGES=(
     ${BASE_PACKAGES[@]}
     ${NETWORK_PACKAGES[@]}
@@ -96,6 +101,20 @@ then
     );
 fi
 
+if [ $INSTALL_MEDIA ]
+then
+    PACKAGES+=(
+        ${INSTALL_MEDIA_PACKAGES[@]}
+    );
+fi
+
+CACHE_PACSTRAP='';
+
+if [ ! $INSTALL_MEDIA ]
+then
+    CACHE_PACSTRAP='-c';
+fi
+
 # Install Base System
 STEP="Install Packages Step";
-stop_if_fail pacstrap -c /mnt ${PACKAGES[@]};
+stop_if_fail pacstrap $CACHE_PACSTRAP /mnt ${PACKAGES[@]};

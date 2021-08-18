@@ -26,3 +26,8 @@ if [ $KDE ]
 then
     enable_kde;
 fi
+
+if [ $INSTALL_MEDIA ]
+then
+    enable_auto_login;
+fi
