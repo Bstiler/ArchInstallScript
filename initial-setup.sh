@@ -14,6 +14,7 @@ sed -i '/#en_US.UTF-8 UTF-8/c\en_US.UTF-8 UTF-8' /etc/locale.gen;
 sed -i '/#pt_BR.UTF-8 UTF-8/c\pt_BR.UTF-8 UTF-8' /etc/locale.gen;
 export LANG=pt_BR.UTF-8;
 locale-gen;
+localectl set-keymap --no-convert br-abnt2;
 
 # Fix mirrors and repos
 STEP="Syncing Mirrors";
