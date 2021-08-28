@@ -12,8 +12,8 @@ timedatectl set-ntp true;
 STEP="Language Config Step";
 sed -i '/#en_US.UTF-8 UTF-8/c\en_US.UTF-8 UTF-8' /etc/locale.gen;
 sed -i '/#pt_BR.UTF-8 UTF-8/c\pt_BR.UTF-8 UTF-8' /etc/locale.gen;
-locale-gen;
 export LANG=pt_BR.UTF-8;
+locale-gen;
 
 # Fix mirrors and repos
 STEP="Syncing Mirrors";
