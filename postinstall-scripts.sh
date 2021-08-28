@@ -5,8 +5,8 @@ source ./postinstall-vars.sh;
 
 # Basic configs, must be present in every installation
 basic_config() {
-    sed -i '#/en_US.UTF-8 UTF-8/c\en_US.UTF-8 UTF-8' /etc/locale.gen;
-    sed -i '#/pt_BR.UTF-8 UTF-8/c\pt_BR.UTF-8 UTF-8' /etc/locale.gen;
+    sed -i '/#en_US.UTF-8 UTF-8/c\en_US.UTF-8 UTF-8' /etc/locale.gen;
+    sed -i '/#pt_BR.UTF-8 UTF-8/c\pt_BR.UTF-8 UTF-8' /etc/locale.gen;
     locale-gen;
     echo LANG=pt_BR.UTF-8 ＞ /etc/locale.conf;
     export LANG=pt_BR.UTF-8;
