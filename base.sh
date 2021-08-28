@@ -111,7 +111,7 @@ fi
 
 CACHE_PACSTRAP='';
 
-if [ ! $INSTALL_MEDIA ]
+if [ ! $PACMAN_CACHE ]
 then
     CACHE_PACSTRAP='-c';
 fi
