@@ -31,3 +31,8 @@ if [ $INSTALL_MEDIA ]
 then
     enable_auto_login;
 fi
+
+if [ $GNOME ]
+then
+    systemctl enable gdm;
+fi

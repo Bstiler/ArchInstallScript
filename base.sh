@@ -14,6 +14,7 @@ BASE_PACKAGES=(
     nano
     btrfs-progs
     dosfstools
+    man-db
 );
 
 NETWORK_PACKAGES=(
@@ -68,6 +69,21 @@ KDE_PACKAGES=(
     konsole
     plasma-wayland-session
     bluedevil
+    powerdevil
+    kdeplasma-addons
+    khotkeys
+    kscreen
+    kwrited
+    plasma-firewall
+)
+
+GNOME_PACKAGES=(
+    gnome-shell
+    gdm
+    tilix
+    gnome-control-center
+    nautilus
+    gnome-shell-extension-appindicator
 )
 
 INSTALL_MEDIA_PACKAGES=(
@@ -95,6 +111,13 @@ then
     );
 fi
 
+if [ $GNOME ]
+then
+    PACKAGES+=(
+        ${GNOME_PACKAGES[@]}
+    );
+fi
+
 if [ $VBOX ]
 then
     PACKAGES+=(
@@ -111,7 +134,7 @@ fi
 
 CACHE_PACSTRAP='';
 
-if [ ! $PACMAN_CACHE ]
+if [ $PACMAN_CACHE ]
 then
     CACHE_PACSTRAP='-c';
 fi
