@@ -84,6 +84,8 @@ GNOME_PACKAGES=(
     gnome-control-center
     nautilus
     gnome-shell-extension-appindicator
+    python-nautilus
+    gnome-tweaks
 )
 
 INSTALL_MEDIA_PACKAGES=(
