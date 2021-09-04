@@ -34,7 +34,7 @@ vconsole_config() {
 user_config() {
     echo 'Please define a password for the root user:';
     passwd;
-    useradd -m -g users -G wheel,storage,power -s /usr/bin/zsh -d $FINAL_HOME $USERNAME;
+    useradd -m -g users -G wheel,storage,power -s /bin/bash $USERNAME;
     echo 'Please define a password for your user:';
     passwd $USERNAME;
 }

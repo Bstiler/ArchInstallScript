@@ -14,5 +14,6 @@ set_root_as_btrfs() {
     stop_if_fail mkfs.btrfs -f $1
     stop_if_fail mount $1 /mnt
     stop_if_fail btrfs subvolume create /mnt/@
+    stop_if_fail btrfs subvolume create /mnt/@home
     stop_if_fail umount /mnt
 }

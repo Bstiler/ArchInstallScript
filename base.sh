@@ -132,11 +132,11 @@ then
     );
 fi
 
-CACHE_PACSTRAP='';
+CACHE_PACSTRAP='-c';
 
-if [ $PACMAN_CACHE ]
+if [ -z $PACMAN_CACHE ]
 then
-    CACHE_PACSTRAP='-c';
+    CACHE_PACSTRAP='';
 fi
 
 # Install Base System

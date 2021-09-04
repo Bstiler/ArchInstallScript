@@ -9,14 +9,15 @@ mount_stuff() {
 
     mkdir -p /mnt/media/$USERNAME/home
     mkdir -p /mnt/boot/efi
+    mkdir -p /mnt/home
 
-    stop_if_fail mount $HOMEFS /mnt/media/$USERNAME/home
+    stop_if_fail mount -o subvol=@home $ROOTFS /mnt/home
     stop_if_fail mount $EFIFS /mnt/boot/efi
 }
 
 umount_stuff() {
     umount /mnt/var/cache/pacman/pkg
-    umount /mnt/media/$USERNAME/home
+    umount /mnt/home
     umount /mnt/boot/efi
     umount /mnt
 }
